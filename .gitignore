@@ -218,3 +218,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+.env
+.files
+chainlit/
+data/
+database/
+vectorstore/
+.DS_Store
+.chainlit/
