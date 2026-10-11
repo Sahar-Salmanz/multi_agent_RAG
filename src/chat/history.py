@@ -56,7 +56,7 @@ def get_session_history(session_id: str) -> SQLChatMessageHistory:
 
     return SQLChatMessageHistory(
         session_id=session_id,
-        connection_string=f"sqlite:///{DB_PATH}",
+        connection=f"sqlite:///{DB_PATH}",
     )
 
 

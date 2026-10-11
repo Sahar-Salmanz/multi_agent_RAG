@@ -49,8 +49,8 @@ def writer_node(state: AgentState) -> AgentState:
     Produces the final user-facing answer from the Analyst's interpretation.
     On retry, incorporates Critic feedback to fix specific issues.
     """
-    question        = state["question"]
-    interpretation  = state["interpretation"]
+    question = state["question"]
+    interpretation = state["interpretation"]
     critic_feedback = state.get("critic_feedback", "")
 
     print("[Writer] Composing answer...")
@@ -80,8 +80,8 @@ Write the answer:""")
     chain = prompt | llm | StrOutputParser()
 
     answer = chain.invoke({
-        "question":        question,
-        "interpretation":  interpretation,
+        "question": question,
+        "interpretation": interpretation,
         "feedback_section": feedback_section,
     })
 

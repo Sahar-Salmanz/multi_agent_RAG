@@ -53,14 +53,14 @@ If REJECTING, you MUST:
        - "formatting_error" if the answer structure/citations are wrong but the content is correct
 
 Respond ONLY with valid JSON in this exact format:
-{
+{{
   "decision": "APPROVE" or "REJECT",
   "criterion_failed": "CR1" or null,
   "quoted_answer_problem": "exact quote from answer" or null,
   "quoted_context_evidence": "exact quote from context" or null,
   "feedback": "specific actionable feedback" or null,
   "target": "retrieval_insufficient" | "interpretation_wrong" | "formatting_error" | null
-}
+}}
 
 Be strict but fair. Approve when the answer is accurate and well-cited, even if imperfect in style.
 """
@@ -71,9 +71,9 @@ def critic_node(state: AgentState) -> AgentState:
     Reviews the Writer's answer and returns APPROVE or REJECT with feedback.
     Increments the iteration counter on each call.
     """
-    question  = state["question"]
-    context   = state["context"]
-    answer    = state["answer"]
+    question = state["question"]
+    context = state["context"]
+    answer = state["answer"]
     iteration = state.get("iteration", 0) + 1
 
     print(f"[Critic] Reviewing answer (iteration {iteration})...")
@@ -91,16 +91,16 @@ Writer's answer:
 Review the answer and respond with JSON:""")
     ])
 
-    llm   = ChatAnthropic(model=CLAUDE_MODEL, temperature=0, max_tokens=512)
+    llm = ChatAnthropic(model=CLAUDE_MODEL, temperature=0, max_tokens=512)
     chain = prompt | llm | StrOutputParser()
 
     raw_response = chain.invoke({
         "question": question,
-        "context":  context,
-        "answer":   answer,
+        "context": context,
+        "answer": answer,
     })
 
-    # ── Parse JSON response ──────────────────────────────────────────────────
+    # Parse JSON response
     try:
         # Strip markdown code fences if present
         clean = raw_response.strip()

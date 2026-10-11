@@ -1,0 +1,17 @@
+langchain
+langchain-anthropic
+langchain-community
+langchain-chroma
+langchain-ollama
+langgraph
+chromadb
+anthropic
+pdfplumber
+pandas
+tabulate
+python-dotenv
+sqlalchemy
+pydantic
+fastapi
+uvicorn
+chainlit

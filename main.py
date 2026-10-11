@@ -15,7 +15,7 @@ from src.api.routes import router
 
 app = FastAPI(
     title="Domain-Specific RAG Chatbot",
-    description="A chatbot grounded in a PDF textbook using RAG and Claude.",
+    description="A chatbot grounded in a NBCC 2020 using RAG and Claude.",
     version="0.1.0",
 )
 

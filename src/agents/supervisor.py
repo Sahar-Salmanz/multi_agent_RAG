@@ -57,7 +57,25 @@ def route_after_critic(state: AgentState) -> str:
         return END
 
     if state["iteration"] >= MAX_ITERATIONS:
-        # Too many retries — return best answer seen
+        target = state.get("critic_target", "")
+
+        if target == "retrieval_insufficient":
+            # Answer genuinely not in the document
+            state["answer"] = (
+                "I couldn't find a reliable answer to this question "
+                "in the available textbook pages. Please consult the "
+                "source document directly."
+            )
+        else:
+            # Chunks existed but pipeline couldn't verify the answer
+            state["answer"] = (
+                "I was unable to produce a fully verified answer after "
+                f"{MAX_ITERATIONS} attempts. This may indicate the question "
+                "requires information outside the indexed pages, or the "
+                "answer could not be confirmed against the source. "
+                "Please verify directly in the textbook."
+            )
+
         return END
 
     target = state.get("critic_target", "writer")
