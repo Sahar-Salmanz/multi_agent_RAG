@@ -1,5 +1,5 @@
 # Multi-Agent RAG Chatbot
-A production-ready, domain-specific question-answering chatbot grounded in the National Building Code of Canada (NBC 2020). Built with a multi-agent LangGraph pipeline for answer quality control, Retrieval-Augmented Generation (RAG) to prevent hallucinations, and source citations on every response.
+A production-ready, domain-specific question-answering chatbot grounded in the National Building Code of Canada (NBCC 2020). Built with a multi-agent LangGraph pipeline for answer quality control, Retrieval-Augmented Generation (RAG) to prevent hallucinations, and source citations on every response.
 
 
 ## Features
