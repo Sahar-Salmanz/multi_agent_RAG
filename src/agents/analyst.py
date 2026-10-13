@@ -42,7 +42,7 @@ Your analysis must include:
 
 If the critic has sent feedback, address it specifically in your analysis.
 
-Be precise and technical. Do not paraphrase loosely — quote exact values and article numbers.
+Be precise and technical. Do not paraphrase loosely, and quote exact values and article numbers.
 """
 
 

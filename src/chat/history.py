@@ -29,7 +29,7 @@ DB_PATH      = os.getenv("DB_PATH", "./database/chat_history.db")
 CLAUDE_MODEL = os.getenv("CLAUDE_MODEL", "claude-sonnet-4-5")
 TOP_K        = int(os.getenv("TOP_K", 4))
 
-# ── System prompt (same grounding rules as chain.py) ────────────────────────
+# System prompt (same grounding rules as chain.py)
 SYSTEM_PROMPT = """You are a knowledgeable assistant answering questions about a specific textbook.
 
 Rules you must follow:

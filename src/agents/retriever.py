@@ -15,7 +15,7 @@ from src.retrieval.retriever import retrieve, format_context
 
 
 load_dotenv()
-TOP_K = int(os.getenv("TOP_K", 8))
+TOP_K = int(os.getenv("TOP_K", 4))
 
 def retriever_node(state: AgentState) -> AgentState:
     """

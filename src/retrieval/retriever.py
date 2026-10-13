@@ -70,7 +70,6 @@ def retrieve(query: str, k: int = TOP_K) -> list:
             TABLE_PAGES = {
                 "4.1.5.3": [438, 439],
                 "4.1.8.18": [502, 503]
-                # add others as you discover them
             }
             table_num = table_match.group(1)
             pages     = TABLE_PAGES.get(table_num, [])

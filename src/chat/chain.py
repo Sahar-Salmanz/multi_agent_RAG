@@ -25,16 +25,15 @@ CLAUDE_MODEL = os.getenv("CLAUDE_MODEL", "claude-sonnet-4-20250514")
 TOP_K = int(os.getenv("TOP_K", 4))
 
 # System prompt
-# This is the most important lever for hallucination control and citation
-# quality. Keep it explicit about (1) grounding, (2) saying "I don't know",
-# and (3) citation format.
+# This is the most important lever for hallucination control and citation quality.
+# Keep it explicit about (1) grounding, (2) saying "I don't know", and (3) citation format.
 SYSTEM_PROMPT = """You are a knowledgeable assistant answering questions about a specific textbook.
 
 Rules you must follow:
 1. Answer ONLY using the information in the provided context below. Do not use outside knowledge.
 2. If the context does not contain enough information to answer the question, say "I don't have enough information in the textbook to answer that" — do not guess or make anything up.
 3. After your answer, list the page numbers you used in a "Sources:" line, e.g. "Sources: Page 12, Page 45".
-4. Be concise and accurate. Quote sparingly — prefer explaining in your own words.
+4. Be concise and accurate. Quote sparingly, prefer explaining in your own words.
 
 Context from the textbook:
 {context}
