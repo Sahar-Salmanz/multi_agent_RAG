@@ -1,7 +1,7 @@
 """
 app.py
 ──────
-Chainlit UI — now powered by the multi-agent LangGraph pipeline.
+Chainlit UI — powered by the multi-agent LangGraph pipeline.
 Shows which agents ran, how many critic iterations occurred,
 and displays citation cards per source.
 
@@ -13,8 +13,7 @@ import os
 import chainlit as cl
 from dotenv import load_dotenv
 from src.agents.supervisor import run as agent_run
-from src.chat.history import get_session_history
-from src.chat.history import get_history
+from src.chat.history import get_session_history, get_history
 
 
 load_dotenv()
